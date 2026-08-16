@@ -1,0 +1,19 @@
+[project]
+name = "airmouse"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Ian Andretta", email = "ianmelchiorandretta11@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "pynput>=1.8.2",
+]
+
+[project.scripts]
+airmouse = "airmouse:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
