@@ -2,6 +2,8 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
 import subprocess
 
+PORT = 8000
+
 class MouseHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         parsed_path = urlparse(self.path)
@@ -41,10 +43,10 @@ class MouseHandler(BaseHTTPRequestHandler):
         pass
 
 if __name__ == "__main__":
-    server_address = ('0.0.0.0', 8000)
+    server_address = ('0.0.0.0', PORT)
     httpd = HTTPServer(server_address, MouseHandler)
-    print("Server running on port 8000...")
-    print("Test on your PC first: http://localhost:8000/?x=10&y=5")
+    print(f"Server running on port {PORT}...")
+    print(f"Link: http://localhost:{PORT}/?x=100&y=100")
     
     try:
         httpd.serve_forever()
